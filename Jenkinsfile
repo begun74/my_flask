@@ -1,10 +1,10 @@
 pipeline {
     agent {
-        // Define agent details here
+	docker {image 'begun74/my_flask:v1.2'}
     }
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+//        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+//        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
     stages {
         stage('Example stage 1') {
