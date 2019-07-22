@@ -35,7 +35,6 @@ persons =  [
 app = Flask(__name__)
 
 
-
 @app.route("/")
 def home():
     return "<h2>Hello!</h2> <p><font color='red'>This is  11.Docker.Lading! </font> </p>"
