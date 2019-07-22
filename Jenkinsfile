@@ -1,6 +1,6 @@
 pipeline {
     agent {
-	docker {image 'begun74/my_flask:v1.1'}
+	//docker {image 'begun74/my_flask:v1.1'}
     }
     environment {
     }
