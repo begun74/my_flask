@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-	//docker {image 'begun74/my_flask:v1.1'}
-    }
-    environment {
-    }
+
     stages {
         stage('Example stage 1') {
             steps {
