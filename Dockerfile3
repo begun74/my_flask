@@ -4,9 +4,10 @@
 
 FROM alpine:3.1
 
-#RUN apt update \
-#&& apt upgrade -y \
-#    && apt install --no-install-recommends --no-install-suggests -y python python-pip 
+RUN apt update \
+&& apt upgrade -y \
+    && apt install --no-install-recommends --no-install-suggests -y python python-pip \
+    && pip install flask
 
 RUN apk add --update python py-pip
 
