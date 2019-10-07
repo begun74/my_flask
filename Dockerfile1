@@ -4,7 +4,8 @@ FROM debian:stretch-slim
 
 RUN apt update \
 && apt upgrade -y \
-    && apt install --no-install-recommends --no-install-suggests -y python python-pip 
+    && apt install --no-install-recommends --no-install-suggests -y python python-pip \
+    && pip install flask
 
 COPY ./app /app
 
