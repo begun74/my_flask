@@ -1,4 +1,6 @@
-from flask import Flask , jsonify
+import sys
+import subprocess
+from flask import Flask , jsonify , request
 
 persons =  [
    {
@@ -35,6 +37,13 @@ persons =  [
 app = Flask(__name__)
 
 
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+
+
 @app.route("/")
 def home():
     return "<h2>Hello!</h2> <p><font color='red'>This is  11.Docker.Lading! </font> </p>"
@@ -56,7 +65,10 @@ def getPerson(id):
 def getPersons():
     return jsonify({'persons': persons})
 
+@app.route("/quit")
+def goodBye():
+    shutdown_server()
 
 
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0',port=8088, debug=True)
+    app.run(host= '0.0.0.0',port=80, debug=False)
